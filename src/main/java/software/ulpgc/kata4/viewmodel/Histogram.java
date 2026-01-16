@@ -5,9 +5,11 @@ import java.util.Iterator;
 import java.util.Map;
 
 public class Histogram implements Iterable<Integer> {
+    private final Map<String, String> labels;
     private final Map<Integer, Integer> frequencies;
 
-    public Histogram() {
+    public Histogram(Map<String, String> labels) {
+        this.labels = labels;
         this.frequencies = new HashMap<>();
     }
 
@@ -26,6 +28,18 @@ public class Histogram implements Iterable<Integer> {
 
     public int size() {
         return frequencies.size();
+    }
+
+    public String title() {
+        return (String) this.labels.getOrDefault("title", "");
+    }
+
+    public String x() {
+        return (String) this.labels.getOrDefault("x", "");
+    }
+
+    public String legend() {
+        return (String) this.labels.getOrDefault("legend", "");
     }
 }
 
