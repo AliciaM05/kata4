@@ -14,7 +14,7 @@ public class HistogramBuilder {
     private final Stream<Movie> movies;
     private final Map<String, String> labels;
 
-    public HistogramBuilder(Stream<Movie> movies) {
+    private HistogramBuilder(Stream<Movie> movies) {
         this.movies = movies;
         this.labels = new HashMap<>();
     }
